@@ -135,11 +135,26 @@ noise → the paper's stronger-agent claim does **not reproduce** on this substr
 partial-break). Robust across every model: active = lowest-variance arm + ~35× cheaper than
 full-dump (100 vs ~3500 tok); over-injection → no-mem. README finding #4 + bottom line committed.
 
-## Remaining
-- **GitHub push** (commits so far) + profile pin — awaiting user ok (outward-facing).
-- Optional deepening (only if wanted): ~18 seeds/strong-model to resolve the ~6pp (expensive,
-  effect may be 0); GRPO-train the gate to cut wasted-rate 0.7–0.8; paper-exact bank/gating from
-  full PDF; Terminal-Bench/τ²-Bench (their benches).
+## Shipped (2026-07-14)
+Repo public github.com/loversky02/promem-vn (main; fa6749b/37f9322/28b346a/b3ce203). Profile
+README features promem-vn (loversky02/loversky02 eb1c8f3). PIN boxes 6/6 max → user picks which
+to swap (suggested: System-III-Router, superseded by super-agent).
+
+## Paper method (full PDF, arXiv 2607.08716) — reframes everything
+Memory agent = an **LLM** (Opus 4.6). Bank B_t=(status, knowledge, procedural): `status` PRIVATE
+(never shown to action agent), `knowledge`=stable facts, `procedural`=attempts+outcomes. Two phases
+per memory step: (1) bank management via tool calls (memory_update_status / save_knowledge /
+save_procedural / delete); (2) LLM emits reminder r_t or ∅. Trigger = first step + fixed interval,
+k=8 window. Results: TB2.0 Sonnet 37.6→45.9 (+8.3), **Opus 43.5→45.9 (+2.4)**; τ²-Bench Sonnet
+55.0→61.8 (+6.8), **Opus 66.2→68.7 (+2.5)**. Ablations (τ²): full-bank-context (passive) trails full
+by 2.8 macro; **always-inject only −0.8 macro (NOT a collapse)**; injection-only (no bank) less stable.
+§3.5: SFT+GRPO an open-weight memory agent (preliminary).
+
+## Reframed deepening (our gate is rule-based → we tested a LOWER-BOUND)
+1. **Build `LLMMemoryAgent`** (two-phase: bank tool-edits + LLM inject/silent decision), $0 via
+   9router → re-run 3-arm. This is faithful ProMem; subsumes "fix bank/gating". **HIGHEST VALUE.**
+2. GRPO-train the memory agent (paper §3.5) — GPU / real money; only after the prompted LLM agent works.
+3. 18-seed significance — meaningful only once the memory agent is faithful.
 2. `--sweep` for the **Q2** inject-rate → score curve; label injects necessary/unnecessary
    with the reused napmem probe → locate the context-spam cliff.
 3. Plot Q1 bars + Q2 curve; write the honest finding into README/paper.

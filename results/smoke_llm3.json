@@ -1,0 +1,68 @@
+{
+  "act_model": "cc/claude-haiku-4-5-20251001",
+  "mem_model": "cc/claude-opus-4-8",
+  "episodes": 1,
+  "steps": 10,
+  "interval": 3,
+  "arms": {
+    "no-mem": {
+      "mean_score_pct": 0.0,
+      "stdev_pct": 0.0,
+      "mean_injects": 0,
+      "mean_ctx_tokens": 0,
+      "total_mem_calls": 0,
+      "records": [
+        {
+          "arm": "no-mem",
+          "score": 0.0,
+          "steps": 10,
+          "reward": 0.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 0,
+          "unlocked": []
+        }
+      ]
+    },
+    "full-bank": {
+      "mean_score_pct": 0.0,
+      "stdev_pct": 0.0,
+      "mean_injects": 0,
+      "mean_ctx_tokens": 608,
+      "total_mem_calls": 4,
+      "records": [
+        {
+          "arm": "full-bank",
+          "score": 0.0,
+          "steps": 10,
+          "reward": 0.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 608,
+          "unlocked": []
+        }
+      ]
+    },
+    "active": {
+      "mean_score_pct": 0.0,
+      "stdev_pct": 0.0,
+      "mean_injects": 1,
+      "mean_ctx_tokens": 22,
+      "total_mem_calls": 8,
+      "records": [
+        {
+          "arm": "active",
+          "score": 0.0,
+          "steps": 10,
+          "reward": 0.0,
+          "injects": 1,
+          "inject_rate": 0.1,
+          "ctx_tokens": 22,
+          "unlocked": []
+        }
+      ]
+    }
+  },
+  "active_minus_fullbank_pct": 0.0,
+  "active_minus_nomem_pct": 0.0
+}
