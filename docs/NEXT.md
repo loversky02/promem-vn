@@ -126,13 +126,20 @@ suggestive not conclusive; (c) inject-audit wasted_rate **0.82** (only 18% of in
 followed by progress ≤5 steps) → active helps on net but the gate is imprecise. README
 findings #1 (revised: passive inert) & #3 (de-noise) updated.
 
-## Next — strong-agent panel (user: try all 3)
-Gateway update: `claude-sonnet-4-6` de-listed (still routes); new models. Smoke:
-`cc/claude-opus-4-8` OK, `cx/gpt-5.6-sol` OK, `cc/claude-sonnet-5` **HTTP 400** (dropped).
-Panel (sequential, after follow-up commit): opus-4-8 + gpt-5.6-sol × 3 arms (best gate 20/12)
-× 3 seeds × 100 + `--dump-traces` → `results/panel_opus.json`, `results/panel_gpt56.json`.
-Capability + cross-family axis; DIRECTIONAL read only (de-noise showed ≈1σ even at n=8).
-Then GitHub push + profile pin.
+## Strong-agent panel — DONE (2026-07-14)
+opus-4-8: no-mem **27.3%** ±4.6 / full 16.7 ±13.1 / active 22.7 ±4.6 (active−full +6.06, wasted 0.75).
+gpt-5.6-sol: no-mem 27.3 ±9.1 / full **31.8** ±20.8 / active 25.8 ±5.3 (active−full **−6.06**, wasted 0.70).
+Honest: **capability dominates** — strong agents ~27% with no memory (3× Sonnet, 6× Haiku);
+memory does NOT lift the mean and active−full **flips sign** across models inside stdev 13–21
+noise → the paper's stronger-agent claim does **not reproduce** on this substrate (honest
+partial-break). Robust across every model: active = lowest-variance arm + ~35× cheaper than
+full-dump (100 vs ~3500 tok); over-injection → no-mem. README finding #4 + bottom line committed.
+
+## Remaining
+- **GitHub push** (commits so far) + profile pin — awaiting user ok (outward-facing).
+- Optional deepening (only if wanted): ~18 seeds/strong-model to resolve the ~6pp (expensive,
+  effect may be 0); GRPO-train the gate to cut wasted-rate 0.7–0.8; paper-exact bank/gating from
+  full PDF; Terminal-Bench/τ²-Bench (their benches).
 2. `--sweep` for the **Q2** inject-rate → score curve; label injects necessary/unnecessary
    with the reused napmem probe → locate the context-spam cliff.
 3. Plot Q1 bars + Q2 curve; write the honest finding into README/paper.

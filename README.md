@@ -89,4 +89,21 @@ Tempering: an inject-audit finds wasted-rate **0.82** (only 18% of injects are
 followed by progress within 5 steps) — active helps on net, but the gate is
 imprecise, so the benefit is diffuse rather than per-inject.
 
+**4. For strong agents, capability dominates and no memory benefit is detectable (honest partial-break).**
+A 3-seed panel with stronger action agents reaches ~27% with *no* memory (Opus 4.8 and
+GPT-5.6 alike) — 3× Sonnet, 6× Haiku. Memory does not lift the mean, and the sign of
+active − full-context *flips* across models (Opus +6.06pp, GPT −6.06pp) inside enormous
+noise (full-context stdev 13–21 at n=3). The paper's claim that memory helps *stronger*
+agents does not reproduce here: capability dominates, and passive full-context can even
+hurt (Opus 16.7% vs no-mem 27.3%). What *does* replicate across every model: active-injection
+is the lowest-variance arm and ~35× cheaper than passive dumping (100 vs ~3500 tokens),
+with inject wasted-rate ~0.70–0.82 throughout. (Caveat: n=3 at stdev ~15 cannot resolve a
+~6pp effect — this is "not detected," not "proven zero.")
+
+**Bottom line.** ProMem's *mechanism* — selective, sparse, cheap injection — is real and
+robustly beats passive bank-dumping on cost and stability. But its *score* benefit is
+regime-dependent: clear only for a weak, floored agent; ≈1σ for a mid agent (Sonnet); and
+undetectable/inconsistent for strong agents, where capability dominates. Passive
+full-context dumping is inert-to-harmful everywhere, and over-injection collapses to no-mem.
+
 See `docs/NEXT.md` for the build plan, gateway invocation, and resume point.

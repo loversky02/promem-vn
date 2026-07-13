@@ -1,0 +1,196 @@
+{
+  "mode": "q1",
+  "policy": "llm",
+  "model": "cx/gpt-5.6-sol",
+  "episodes": 3,
+  "steps": 100,
+  "gate": {
+    "stall_n": 20,
+    "cooldown_k": 12
+  },
+  "arms": {
+    "no-mem": {
+      "mean_score_pct": 27.27272727272727,
+      "stdev_pct": 9.090909090909092,
+      "mean_injects": 0,
+      "mean_inject_rate": 0.0,
+      "mean_ctx_tokens": 0,
+      "records": [
+        {
+          "arm": "no-mem",
+          "score": 0.2727,
+          "steps": 100,
+          "reward": 6.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 0,
+          "unlocked": [
+            "collect_stone",
+            "collect_wood",
+            "make_stone_pickaxe",
+            "make_stone_sword",
+            "make_wood_pickaxe",
+            "place_table"
+          ]
+        },
+        {
+          "arm": "no-mem",
+          "score": 0.3636,
+          "steps": 100,
+          "reward": 8.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 0,
+          "unlocked": [
+            "collect_stone",
+            "collect_wood",
+            "eat_cow",
+            "make_stone_pickaxe",
+            "make_stone_sword",
+            "make_wood_pickaxe",
+            "place_furnace",
+            "place_table"
+          ]
+        },
+        {
+          "arm": "no-mem",
+          "score": 0.1818,
+          "steps": 100,
+          "reward": 4.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 0,
+          "unlocked": [
+            "collect_stone",
+            "collect_wood",
+            "make_wood_pickaxe",
+            "place_table"
+          ]
+        }
+      ]
+    },
+    "full-context": {
+      "mean_score_pct": 31.818181818181817,
+      "stdev_pct": 20.829889522526546,
+      "mean_injects": 0,
+      "mean_inject_rate": 0.0,
+      "mean_ctx_tokens": 3651.6666666666665,
+      "records": [
+        {
+          "arm": "full-context",
+          "score": 0.3636,
+          "steps": 100,
+          "reward": 8.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 3588,
+          "unlocked": [
+            "collect_drink",
+            "collect_stone",
+            "collect_wood",
+            "eat_cow",
+            "make_wood_pickaxe",
+            "make_wood_sword",
+            "place_furnace",
+            "place_table"
+          ]
+        },
+        {
+          "arm": "full-context",
+          "score": 0.5,
+          "steps": 100,
+          "reward": 11.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 4084,
+          "unlocked": [
+            "collect_stone",
+            "collect_wood",
+            "defeat_skeleton",
+            "eat_cow",
+            "make_stone_pickaxe",
+            "make_stone_sword",
+            "make_wood_pickaxe",
+            "make_wood_sword",
+            "place_furnace",
+            "place_stone",
+            "place_table"
+          ]
+        },
+        {
+          "arm": "full-context",
+          "score": 0.0909,
+          "steps": 100,
+          "reward": 2.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 3283,
+          "unlocked": [
+            "collect_wood",
+            "place_table"
+          ]
+        }
+      ]
+    },
+    "active-injection": {
+      "mean_score_pct": 25.757575757575758,
+      "stdev_pct": 5.2486388108147795,
+      "mean_injects": 6.666666666666667,
+      "mean_inject_rate": 0.06666666666666667,
+      "mean_ctx_tokens": 100,
+      "records": [
+        {
+          "arm": "active-injection",
+          "score": 0.2273,
+          "steps": 100,
+          "reward": 5.0,
+          "injects": 7,
+          "inject_rate": 0.07,
+          "ctx_tokens": 105,
+          "unlocked": [
+            "collect_wood",
+            "eat_cow",
+            "make_wood_pickaxe",
+            "make_wood_sword",
+            "place_table"
+          ]
+        },
+        {
+          "arm": "active-injection",
+          "score": 0.3182,
+          "steps": 100,
+          "reward": 7.0,
+          "injects": 6,
+          "inject_rate": 0.06,
+          "ctx_tokens": 90,
+          "unlocked": [
+            "collect_stone",
+            "collect_wood",
+            "make_stone_pickaxe",
+            "make_stone_sword",
+            "make_wood_pickaxe",
+            "place_furnace",
+            "place_table"
+          ]
+        },
+        {
+          "arm": "active-injection",
+          "score": 0.2273,
+          "steps": 100,
+          "reward": 5.0,
+          "injects": 7,
+          "inject_rate": 0.07,
+          "ctx_tokens": 105,
+          "unlocked": [
+            "collect_coal",
+            "collect_stone",
+            "collect_wood",
+            "make_wood_pickaxe",
+            "place_table"
+          ]
+        }
+      ]
+    }
+  },
+  "Q1_active_minus_fullctx_pct": -6.060606060606059
+}
