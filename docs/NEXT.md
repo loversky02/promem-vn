@@ -109,12 +109,30 @@ despite 1470 tok = the **context-spam cliff**. Middle is flat/noisy (n=3, Sonnet
 no precise dose-response, only the endpoints are robust. Finding: selective, SPARSE injection
 is the value; over-injection is as bad as no memory (mirrors napmem spam reward-hacking).
 
-## Next actions
-1. Money-plot the curve into the repo (`results/q2_curve.png`) + write the honest finding
-   into README/paper: "selective>passive AND over-injection collapses to no-mem".
-2. (optional) napmem unnecessary-inject labeling on the trace to quantify wasted injects.
-3. (optional) de-noise: 8-seed replication of the best gate (0.08) vs full-context vs no-mem
-   to firm up "sparse active > passive" on score (currently endpoints suggestive at n=3).
+## Status (2026-07-13)
+1. **SHIPPED** — finding written into README, `results/q2_curve.svg` money-plot (stdlib,
+   `scripts/plot_q2.py`), `git init` + commit `fa6749b` (28 files, no AI attribution).
+   Local only — NOT pushed to GitHub yet (awaiting user ok).
+2. **inject-audit BUILT** — `promem/analysis/inject_audit.py` (necessary vs wasted proxy) +
+   6 tests; `run_3arm.py --dump-traces` writes `.traces.jsonl`. Quantification pending #3's traces.
+3. **DONE** — 8-seed de-noise (Sonnet, best gate) → `results/q1_denoise_sonnet.json`.
+
+## De-noise result (2026-07-13) — findings revised
+Sonnet best gate, 8 seeds: no-mem **8.52% ±6.16** · full-context **7.39% ±3.38** ·
+active **11.36% ±4.86**. Surprises: (a) full-context does NOT beat no-mem — the n=2 hint
+was a 2-seed artifact (passive dump inert AND costs 2907 tok); (b) active is the only arm
+lifting the mean, active−full **+3.98pp** (grew from +2.27 at n=2) but ≈1σ (pooled 3.9),
+suggestive not conclusive; (c) inject-audit wasted_rate **0.82** (only 18% of injects
+followed by progress ≤5 steps) → active helps on net but the gate is imprecise. README
+findings #1 (revised: passive inert) & #3 (de-noise) updated.
+
+## Next — strong-agent panel (user: try all 3)
+Gateway update: `claude-sonnet-4-6` de-listed (still routes); new models. Smoke:
+`cc/claude-opus-4-8` OK, `cx/gpt-5.6-sol` OK, `cc/claude-sonnet-5` **HTTP 400** (dropped).
+Panel (sequential, after follow-up commit): opus-4-8 + gpt-5.6-sol × 3 arms (best gate 20/12)
+× 3 seeds × 100 + `--dump-traces` → `results/panel_opus.json`, `results/panel_gpt56.json`.
+Capability + cross-family axis; DIRECTIONAL read only (de-noise showed ≈1σ even at n=8).
+Then GitHub push + profile pin.
 2. `--sweep` for the **Q2** inject-rate → score curve; label injects necessary/unnecessary
    with the reused napmem probe → locate the context-spam cliff.
 3. Plot Q1 bars + Q2 curve; write the honest finding into README/paper.

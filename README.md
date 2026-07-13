@@ -50,10 +50,13 @@ Three arms on the **same unmodified action policy**:
 Action agent = Claude via a self-hosted 9router gateway; substrate = automem-vn's
 text-Crafter. Heuristic numbers are plumbing only, never a finding.
 
-**1. Memory beats no-memory — surfacing the open subgoal helps (robust).**
-A weak agent (Haiku, 60 steps) unlocks nothing from raw observations (0.0%) but
-reaches `collect_wood` (4.55%) as soon as either memory arm surfaces the current
-subgoal.
+**1. Passive dumping is inert and expensive; only a floored weak agent gains from mere exposure.**
+For a capable agent (Sonnet, 8 seeds) passive full-context does *not* beat no-mem
+(7.39% vs 8.52% — within noise) yet costs ~2907 extra tokens/ep: dumping the whole
+bank is a bad trade. (An earlier n=2 hint that full-context > no-mem was a
+small-sample artifact.) Mere exposure helps in exactly one regime — a *floored*
+weak agent: Haiku (60 steps) unlocks nothing from raw observations (0.0%) but
+reaches `collect_wood` (4.55%) once either memory arm surfaces the current subgoal.
 
 **2. Selective ≫ passive on cost, and the spam cliff is real (robust at the extremes).**
 Sweeping the gate from gentle to aggressive (Sonnet, n=3 — see `results/q2_curve.svg`):
@@ -69,14 +72,21 @@ Sweeping the gate from gentle to aggressive (Sonnet, n=3 — see `results/q2_cur
 - The saturating gate **collapses to exactly the no-mem baseline (4.55%)** despite
   spending 1470 tokens: over-injection is context-spam, as useless as no memory.
 - The middle of the curve is flat within noise (n=3) — only the endpoints are robust.
+- Caveat: the baseline overlays (full 9.09, no-mem 4.55) are 2-seed estimates; the
+  8-seed de-noise (finding 3) revises them to 7.39 / 8.52 and shows arm gaps are ≈1σ.
+  The cliff *shape* (sparse best, saturating worst) is the robust part, not the exact deltas.
 
 This reproduces the paper's *selective intervention > passive bank exposure* and
 extends it: over-injection destroys the benefit — the same spamming failure mode
 seen when a memory policy is trained in the sibling `napmem-vn`.
 
-**3. Not established: sparse active > passive on *score* (n=2, within noise).**
-The Q1 score gap (Sonnet) was +2.27pp but with stdev 9.6 ≫ gap — one lucky episode
-carried it, and another had active < full. An 8-seed de-noise is the honest next
-step (see `docs/NEXT.md`).
+**3. Active injection is the only arm that lifts the mean — suggestive, not conclusive.**
+8-seed de-noise (Sonnet, best gate): active **11.36%** vs full-context 7.39% vs
+no-mem 8.52%, i.e. active − full = **+3.98pp** at ~25× less context (116 vs 2907
+tokens). The edge *grew* with seeds (+2.27 at n=2 → +3.98 at n=8) and 6/8 seeds are
+solid — but it is still ≈1σ (pooled stdev ~3.9), so suggestive, not established.
+Tempering: an inject-audit finds wasted-rate **0.82** (only 18% of injects are
+followed by progress within 5 steps) — active helps on net, but the gate is
+imprecise, so the benefit is diffuse rather than per-inject.
 
 See `docs/NEXT.md` for the build plan, gateway invocation, and resume point.

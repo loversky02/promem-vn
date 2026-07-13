@@ -1,0 +1,352 @@
+{
+  "mode": "q1",
+  "policy": "llm",
+  "model": "cc/claude-sonnet-4-6",
+  "episodes": 8,
+  "steps": 100,
+  "gate": {
+    "stall_n": 20,
+    "cooldown_k": 12
+  },
+  "arms": {
+    "no-mem": {
+      "mean_score_pct": 8.522727272727272,
+      "stdev_pct": 6.164557644820625,
+      "mean_injects": 0,
+      "mean_inject_rate": 0.0,
+      "mean_ctx_tokens": 0,
+      "records": [
+        {
+          "arm": "no-mem",
+          "score": 0.0455,
+          "steps": 100,
+          "reward": 1.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 0,
+          "unlocked": [
+            "collect_wood"
+          ]
+        },
+        {
+          "arm": "no-mem",
+          "score": 0.0455,
+          "steps": 100,
+          "reward": 1.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 0,
+          "unlocked": [
+            "collect_wood"
+          ]
+        },
+        {
+          "arm": "no-mem",
+          "score": 0.0455,
+          "steps": 100,
+          "reward": 1.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 0,
+          "unlocked": [
+            "eat_cow"
+          ]
+        },
+        {
+          "arm": "no-mem",
+          "score": 0.1818,
+          "steps": 100,
+          "reward": 4.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 0,
+          "unlocked": [
+            "collect_sapling",
+            "collect_wood",
+            "make_wood_pickaxe",
+            "place_table"
+          ]
+        },
+        {
+          "arm": "no-mem",
+          "score": 0.1364,
+          "steps": 100,
+          "reward": 3.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 0,
+          "unlocked": [
+            "collect_wood",
+            "eat_cow",
+            "place_table"
+          ]
+        },
+        {
+          "arm": "no-mem",
+          "score": 0.1364,
+          "steps": 100,
+          "reward": 3.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 0,
+          "unlocked": [
+            "collect_sapling",
+            "eat_cow",
+            "place_plant"
+          ]
+        },
+        {
+          "arm": "no-mem",
+          "score": 0.0909,
+          "steps": 100,
+          "reward": 2.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 0,
+          "unlocked": [
+            "collect_wood",
+            "eat_cow"
+          ]
+        },
+        {
+          "arm": "no-mem",
+          "score": 0.0,
+          "steps": 100,
+          "reward": 0.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 0,
+          "unlocked": []
+        }
+      ]
+    },
+    "full-context": {
+      "mean_score_pct": 7.386363636363637,
+      "stdev_pct": 3.3819264051947497,
+      "mean_injects": 0,
+      "mean_inject_rate": 0.0,
+      "mean_ctx_tokens": 2907,
+      "records": [
+        {
+          "arm": "full-context",
+          "score": 0.0455,
+          "steps": 100,
+          "reward": 1.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 2810,
+          "unlocked": [
+            "collect_wood"
+          ]
+        },
+        {
+          "arm": "full-context",
+          "score": 0.0455,
+          "steps": 100,
+          "reward": 1.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 2847,
+          "unlocked": [
+            "collect_wood"
+          ]
+        },
+        {
+          "arm": "full-context",
+          "score": 0.0455,
+          "steps": 100,
+          "reward": 1.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 2925,
+          "unlocked": [
+            "collect_wood"
+          ]
+        },
+        {
+          "arm": "full-context",
+          "score": 0.0909,
+          "steps": 100,
+          "reward": 2.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 2887,
+          "unlocked": [
+            "collect_sapling",
+            "collect_wood"
+          ]
+        },
+        {
+          "arm": "full-context",
+          "score": 0.1364,
+          "steps": 100,
+          "reward": 3.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 3248,
+          "unlocked": [
+            "collect_sapling",
+            "collect_wood",
+            "place_table"
+          ]
+        },
+        {
+          "arm": "full-context",
+          "score": 0.0909,
+          "steps": 100,
+          "reward": 2.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 2730,
+          "unlocked": [
+            "collect_wood",
+            "eat_cow"
+          ]
+        },
+        {
+          "arm": "full-context",
+          "score": 0.0909,
+          "steps": 100,
+          "reward": 2.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 2768,
+          "unlocked": [
+            "collect_wood",
+            "place_table"
+          ]
+        },
+        {
+          "arm": "full-context",
+          "score": 0.0455,
+          "steps": 100,
+          "reward": 1.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 3041,
+          "unlocked": [
+            "collect_wood"
+          ]
+        }
+      ]
+    },
+    "active-injection": {
+      "mean_score_pct": 11.363636363636363,
+      "stdev_pct": 4.859295307498625,
+      "mean_injects": 7.75,
+      "mean_inject_rate": 0.0775,
+      "mean_ctx_tokens": 116.25,
+      "records": [
+        {
+          "arm": "active-injection",
+          "score": 0.0909,
+          "steps": 100,
+          "reward": 2.0,
+          "injects": 8,
+          "inject_rate": 0.08,
+          "ctx_tokens": 120,
+          "unlocked": [
+            "collect_wood",
+            "place_table"
+          ]
+        },
+        {
+          "arm": "active-injection",
+          "score": 0.0455,
+          "steps": 100,
+          "reward": 1.0,
+          "injects": 8,
+          "inject_rate": 0.08,
+          "ctx_tokens": 120,
+          "unlocked": [
+            "collect_wood"
+          ]
+        },
+        {
+          "arm": "active-injection",
+          "score": 0.0455,
+          "steps": 100,
+          "reward": 1.0,
+          "injects": 7,
+          "inject_rate": 0.07,
+          "ctx_tokens": 105,
+          "unlocked": [
+            "eat_cow"
+          ]
+        },
+        {
+          "arm": "active-injection",
+          "score": 0.1364,
+          "steps": 100,
+          "reward": 2.9,
+          "injects": 7,
+          "inject_rate": 0.07,
+          "ctx_tokens": 105,
+          "unlocked": [
+            "collect_wood",
+            "eat_cow",
+            "place_table"
+          ]
+        },
+        {
+          "arm": "active-injection",
+          "score": 0.1364,
+          "steps": 100,
+          "reward": 3.0,
+          "injects": 8,
+          "inject_rate": 0.08,
+          "ctx_tokens": 120,
+          "unlocked": [
+            "collect_wood",
+            "eat_cow",
+            "place_table"
+          ]
+        },
+        {
+          "arm": "active-injection",
+          "score": 0.1818,
+          "steps": 100,
+          "reward": 4.0,
+          "injects": 8,
+          "inject_rate": 0.08,
+          "ctx_tokens": 120,
+          "unlocked": [
+            "collect_wood",
+            "eat_cow",
+            "make_wood_pickaxe",
+            "place_table"
+          ]
+        },
+        {
+          "arm": "active-injection",
+          "score": 0.1364,
+          "steps": 100,
+          "reward": 3.0,
+          "injects": 8,
+          "inject_rate": 0.08,
+          "ctx_tokens": 120,
+          "unlocked": [
+            "collect_wood",
+            "eat_cow",
+            "place_table"
+          ]
+        },
+        {
+          "arm": "active-injection",
+          "score": 0.1364,
+          "steps": 100,
+          "reward": 3.0,
+          "injects": 8,
+          "inject_rate": 0.08,
+          "ctx_tokens": 120,
+          "unlocked": [
+            "collect_wood",
+            "make_wood_pickaxe",
+            "place_table"
+          ]
+        }
+      ]
+    }
+  },
+  "Q1_active_minus_fullctx_pct": 3.9772727272727266
+}
