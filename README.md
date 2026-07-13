@@ -50,6 +50,16 @@ Three arms on the **same unmodified action policy**:
 Action agent = Claude via a self-hosted 9router gateway; substrate = automem-vn's
 text-Crafter. Heuristic numbers are plumbing only, never a finding.
 
+> **Fidelity caveat (read first).** The paper's memory agent is itself an LLM (Opus 4.6)
+> running a two-phase workflow — Phase 1 edits a structured bank (`status` / `knowledge` /
+> `procedural`) via tool calls; Phase 2 an LLM decides inject-vs-silent. *Our* memory agent
+> is **rule-based** (bank parsed from observations; gate = stall/loop heuristics). So the
+> results below test a cheap **rule-based lower-bound** of ProMem, not the paper's LLM
+> memory agent. Read the nulls — especially the strong-agent "break" — as *"a crude gate
+> does not realize the gains,"* not *"ProMem's mechanism fails."* The paper reports gains
+> even for a strong action agent (Opus +2.4pp Terminal-Bench, +2.5pp τ²-Bench) with its LLM
+> memory agent; a faithful LLM memory agent here is the key next step (see `docs/NEXT.md`).
+
 **1. Passive dumping is inert and expensive; only a floored weak agent gains from mere exposure.**
 For a capable agent (Sonnet, 8 seeds) passive full-context does *not* beat no-mem
 (7.39% vs 8.52% — within noise) yet costs ~2907 extra tokens/ep: dumping the whole
