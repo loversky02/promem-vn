@@ -1,0 +1,118 @@
+{
+  "mode": "q1",
+  "policy": "llm",
+  "model": "cc/claude-sonnet-4-6",
+  "episodes": 2,
+  "steps": 100,
+  "gate": {
+    "stall_n": 8,
+    "cooldown_k": 5
+  },
+  "arms": {
+    "no-mem": {
+      "mean_score_pct": 4.545454545454546,
+      "stdev_pct": 0.0,
+      "mean_injects": 0,
+      "mean_inject_rate": 0.0,
+      "mean_ctx_tokens": 0,
+      "records": [
+        {
+          "arm": "no-mem",
+          "score": 0.0455,
+          "steps": 100,
+          "reward": 1.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 0,
+          "unlocked": [
+            "collect_wood"
+          ]
+        },
+        {
+          "arm": "no-mem",
+          "score": 0.0455,
+          "steps": 100,
+          "reward": 1.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 0,
+          "unlocked": [
+            "collect_wood"
+          ]
+        }
+      ]
+    },
+    "full-context": {
+      "mean_score_pct": 9.090909090909092,
+      "stdev_pct": 0.0,
+      "mean_injects": 0,
+      "mean_inject_rate": 0.0,
+      "mean_ctx_tokens": 2839,
+      "records": [
+        {
+          "arm": "full-context",
+          "score": 0.0909,
+          "steps": 100,
+          "reward": 2.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 2825,
+          "unlocked": [
+            "collect_wood",
+            "place_table"
+          ]
+        },
+        {
+          "arm": "full-context",
+          "score": 0.0909,
+          "steps": 100,
+          "reward": 2.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 2853,
+          "unlocked": [
+            "collect_wood",
+            "place_table"
+          ]
+        }
+      ]
+    },
+    "active-injection": {
+      "mean_score_pct": 11.363636363636365,
+      "stdev_pct": 9.642365197998377,
+      "mean_injects": 18,
+      "mean_inject_rate": 0.18,
+      "mean_ctx_tokens": 270,
+      "records": [
+        {
+          "arm": "active-injection",
+          "score": 0.1818,
+          "steps": 100,
+          "reward": 4.0,
+          "injects": 17,
+          "inject_rate": 0.17,
+          "ctx_tokens": 255,
+          "unlocked": [
+            "collect_wood",
+            "eat_cow",
+            "make_wood_pickaxe",
+            "place_table"
+          ]
+        },
+        {
+          "arm": "active-injection",
+          "score": 0.0455,
+          "steps": 100,
+          "reward": 1.0,
+          "injects": 19,
+          "inject_rate": 0.19,
+          "ctx_tokens": 285,
+          "unlocked": [
+            "collect_wood"
+          ]
+        }
+      ]
+    }
+  },
+  "Q1_active_minus_fullctx_pct": 2.2727272727272734
+}

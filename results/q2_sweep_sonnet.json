@@ -1,0 +1,51 @@
+{
+  "mode": "q2_sweep",
+  "policy": "llm",
+  "model": "cc/claude-sonnet-4-6",
+  "episodes": 3,
+  "steps": 100,
+  "points": [
+    {
+      "stall_n": 2,
+      "cooldown_k": 1,
+      "mean_inject_rate": 0.98,
+      "mean_score_pct": 4.545454545454546,
+      "mean_ctx_tokens": 1470
+    },
+    {
+      "stall_n": 4,
+      "cooldown_k": 2,
+      "mean_inject_rate": 0.4766666666666666,
+      "mean_score_pct": 6.0606060606060606,
+      "mean_ctx_tokens": 715
+    },
+    {
+      "stall_n": 6,
+      "cooldown_k": 3,
+      "mean_inject_rate": 0.3050282485875706,
+      "mean_score_pct": 7.575757575757576,
+      "mean_ctx_tokens": 395
+    },
+    {
+      "stall_n": 8,
+      "cooldown_k": 5,
+      "mean_inject_rate": 0.18666666666666668,
+      "mean_score_pct": 6.0606060606060606,
+      "mean_ctx_tokens": 280
+    },
+    {
+      "stall_n": 12,
+      "cooldown_k": 8,
+      "mean_inject_rate": 0.11666666666666667,
+      "mean_score_pct": 6.0606060606060606,
+      "mean_ctx_tokens": 175
+    },
+    {
+      "stall_n": 20,
+      "cooldown_k": 12,
+      "mean_inject_rate": 0.07666666666666667,
+      "mean_score_pct": 10.606060606060606,
+      "mean_ctx_tokens": 115
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "mode": "q1",
+  "policy": "llm",
+  "model": "cc/claude-haiku-4-5-20251001",
+  "episodes": 3,
+  "steps": 60,
+  "gate": {
+    "stall_n": 8,
+    "cooldown_k": 5
+  },
+  "arms": {
+    "no-mem": {
+      "mean_score_pct": 0.0,
+      "stdev_pct": 0.0,
+      "mean_injects": 0,
+      "mean_inject_rate": 0.0,
+      "mean_ctx_tokens": 0,
+      "records": [
+        {
+          "arm": "no-mem",
+          "score": 0.0,
+          "steps": 60,
+          "reward": 0.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 0,
+          "unlocked": []
+        },
+        {
+          "arm": "no-mem",
+          "score": 0.0,
+          "steps": 60,
+          "reward": 0.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 0,
+          "unlocked": []
+        },
+        {
+          "arm": "no-mem",
+          "score": 0.0,
+          "steps": 60,
+          "reward": 0.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 0,
+          "unlocked": []
+        }
+      ]
+    },
+    "full-context": {
+      "mean_score_pct": 4.545454545454546,
+      "stdev_pct": 0.0,
+      "mean_injects": 0,
+      "mean_inject_rate": 0.0,
+      "mean_ctx_tokens": 1670,
+      "records": [
+        {
+          "arm": "full-context",
+          "score": 0.0455,
+          "steps": 60,
+          "reward": 1.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 1579,
+          "unlocked": [
+            "collect_wood"
+          ]
+        },
+        {
+          "arm": "full-context",
+          "score": 0.0455,
+          "steps": 60,
+          "reward": 1.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 1743,
+          "unlocked": [
+            "collect_wood"
+          ]
+        },
+        {
+          "arm": "full-context",
+          "score": 0.0455,
+          "steps": 60,
+          "reward": 1.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 1688,
+          "unlocked": [
+            "collect_wood"
+          ]
+        }
+      ]
+    },
+    "active-injection": {
+      "mean_score_pct": 4.545454545454546,
+      "stdev_pct": 0.0,
+      "mean_injects": 11,
+      "mean_inject_rate": 0.18333333333333332,
+      "mean_ctx_tokens": 165,
+      "records": [
+        {
+          "arm": "active-injection",
+          "score": 0.0455,
+          "steps": 60,
+          "reward": 1.0,
+          "injects": 11,
+          "inject_rate": 0.1833,
+          "ctx_tokens": 165,
+          "unlocked": [
+            "collect_wood"
+          ]
+        },
+        {
+          "arm": "active-injection",
+          "score": 0.0455,
+          "steps": 60,
+          "reward": 1.0,
+          "injects": 11,
+          "inject_rate": 0.1833,
+          "ctx_tokens": 165,
+          "unlocked": [
+            "collect_wood"
+          ]
+        },
+        {
+          "arm": "active-injection",
+          "score": 0.0455,
+          "steps": 60,
+          "reward": 1.0,
+          "injects": 11,
+          "inject_rate": 0.1833,
+          "ctx_tokens": 165,
+          "unlocked": [
+            "collect_wood"
+          ]
+        }
+      ]
+    }
+  },
+  "Q1_active_minus_fullctx_pct": 0.0
+}
