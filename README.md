@@ -110,10 +110,29 @@ is the lowest-variance arm and ~35× cheaper than passive dumping (100 vs ~3500 
 with inject wasted-rate ~0.70–0.82 throughout. (Caveat: n=3 at stdev ~15 cannot resolve a
 ~6pp effect — this is "not detected," not "proven zero.")
 
-**Bottom line.** ProMem's *mechanism* — selective, sparse, cheap injection — is real and
-robustly beats passive bank-dumping on cost and stability. But its *score* benefit is
-regime-dependent: clear only for a weak, floored agent; ≈1σ for a mid agent (Sonnet); and
-undetectable/inconsistent for strong agents, where capability dominates. Passive
-full-context dumping is inert-to-harmful everywhere, and over-injection collapses to no-mem.
+**5. With a *faithful* LLM memory agent AND a capable action agent, memory helps a lot — but "selective" buys cost, not score.**
+Findings 1–4 used a rule-based memory agent. Re-running with the paper's actual design — an
+LLM memory agent (Opus) curating a two-phase bank (`promem/llm_agent/`), plus a capable
+action agent (Sonnet) — flips the picture. Fair regime, 3 seeds × 80 steps: no-mem 4.55%,
+full-bank **15.15%**, active **12.12%** — both memory arms roughly *triple* no-mem (+7.6 to
++10.6pp). This confirms the paper's core direction: memory helps a capable long-horizon
+agent. **Two factors are BOTH required** — a floored weak agent (Haiku: 0→3%, no lift) and a
+rule-parsed bank on a capable agent (rule-gate Sonnet: ≈1σ) each show little; only
+capable-action + LLM-curated-memory shows the big lift. *However*, we do **not** reproduce
+"selective > passive" on Crafter: active did not beat exposing the full curated bank on score
+(−3.03pp, within noise at n=3). What selective buys is **efficiency** — active captures most
+of the lift at **233 tokens vs full-bank's 15,793 (~68× cheaper)**; inject wasted-rate stays
+~0.83. So here "when to surface" is a cost lever, not an accuracy one. (n=3: the
+memory>no-mem lift looks robust — no-mem stdev 0 — the selective-vs-passive gap is noise.)
+
+**Bottom line.** With a faithful LLM memory agent and a capable action agent, memory roughly
+triples score over no-mem on Crafter (+7–10pp) — confirming the paper's core claim, and
+showing it needs **both** a capable action agent **and** a rich LLM-curated bank (a rule-parsed
+bank *or* a floored weak agent shows little). What we do *not* reproduce is "selective >
+passive": selective injection ≈ exposing the full bank on score, but wins decisively on cost
+(~68× fewer tokens). So on this substrate, "when to surface" is an **efficiency** lever, not an
+accuracy one — while over-injection (rule-gate sweep) still collapses to no-mem. Findings 1–4
+were a rule-based lower-bound; finding 5 is the faithful result and supersedes the pessimistic
+reading of 1 & 4.
 
 See `docs/NEXT.md` for the build plan, gateway invocation, and resume point.

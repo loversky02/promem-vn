@@ -151,10 +151,29 @@ by 2.8 macro; **always-inject only −0.8 macro (NOT a collapse)**; injection-on
 §3.5: SFT+GRPO an open-weight memory agent (preliminary).
 
 ## Reframed deepening (our gate is rule-based → we tested a LOWER-BOUND)
-1. **Build `LLMMemoryAgent`** (two-phase: bank tool-edits + LLM inject/silent decision), $0 via
-   9router → re-run 3-arm. This is faithful ProMem; subsumes "fix bank/gating". **HIGHEST VALUE.**
-2. GRPO-train the memory agent (paper §3.5) — GPU / real money; only after the prompted LLM agent works.
-3. 18-seed significance — meaningful only once the memory agent is faithful.
+1. **`LLMMemoryAgent` BUILT + committed `fd64dd5`** — `promem/llm_agent/`: StructuredBank
+   (status private / knowledge / procedural), two-phase agent (Phase 1 bank tool-edits, Phase 2
+   LLM inject/silent), `run_episode_llm` (no-mem / full-bank / active), driver `run_llm_3arm.py`.
+   27 tests. **Faithful Haiku result (3×60, interval6):** no-mem **0.00** / full-bank **3.03 ±2.6
+   (ctx 8589!)** / active **3.03 ±2.6 (ctx 147)**; active−fullbank +0.00, active−no-mem +3.03;
+   wasted 0.91. → The LLM memory agent does **NOT** beat the rule-based lower-bound (rule active
+   4.55) — so the null is *not* just gate crudeness; the **action-agent capability floor dominates**
+   (Haiku=0 no-mem, can't execute). Efficiency win strengthens: active ~58× cheaper than full-bank.
+   **Fair-regime result DONE (act=Sonnet-4-6, mem=Opus, 3×80):** no-mem 4.55 / full-bank **15.15
+   ±10.5 (ctx 15793)** / active **12.12 ±5.3 (ctx 233)** — both memory arms ~3× no-mem (+7.6/+10.6pp),
+   the FIRST big clear memory benefit. Needs BOTH capable action AND LLM-curated bank (neither
+   alone: Haiku floors, rule-gate Sonnet ≈1σ). BUT active−fullbank −3.03 (noise, full stdev 10.5)
+   → "selective > passive" NOT reproduced on Crafter; selective's win is **~68× efficiency** (233 vs
+   15793 tok), not score. wasted 0.83. README finding #5 + bottom line updated. `results/llm_3arm_sonnet.json`.
+2. **GRPO-train the memory agent** (paper §3.5) — GPU / real money (confirm cost first). Now
+   well-motivated: can training the Phase-2 gate cut wasted-rate (0.83) and make selective actually
+   *beat* passive on score, not just cost? This is the paper's own next step.
+3. **18-seed in the FAITHFUL Sonnet regime** ($0, 9router) — de-noise the two open questions:
+   (a) confirm memory>no-mem lift (+7–10pp looks robust); (b) resolve selective-vs-passive
+   (−3pp is within noise at n=3). Cheapest next; do before GRPO.
+
+Pin: GitHub exposes NO pin-repo API (only pinIssue/pinEnvironment) → user ticks promem-vn /
+unticks System-III-Router manually in the profile UI. README featured-list already updated.
 2. `--sweep` for the **Q2** inject-rate → score curve; label injects necessary/unnecessary
    with the reused napmem probe → locate the context-spam cliff.
 3. Plot Q1 bars + Q2 curve; write the honest finding into README/paper.

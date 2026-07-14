@@ -1,0 +1,158 @@
+{
+  "act_model": "cc/claude-sonnet-4-6",
+  "mem_model": "cc/claude-opus-4-8",
+  "episodes": 3,
+  "steps": 80,
+  "interval": 6,
+  "arms": {
+    "no-mem": {
+      "mean_score_pct": 4.545454545454546,
+      "stdev_pct": 0.0,
+      "mean_injects": 0,
+      "mean_ctx_tokens": 0,
+      "total_mem_calls": 0,
+      "records": [
+        {
+          "arm": "no-mem",
+          "score": 0.0455,
+          "steps": 80,
+          "reward": 1.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 0,
+          "unlocked": [
+            "collect_wood"
+          ]
+        },
+        {
+          "arm": "no-mem",
+          "score": 0.0455,
+          "steps": 80,
+          "reward": 1.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 0,
+          "unlocked": [
+            "collect_wood"
+          ]
+        },
+        {
+          "arm": "no-mem",
+          "score": 0.0455,
+          "steps": 80,
+          "reward": 1.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 0,
+          "unlocked": [
+            "eat_cow"
+          ]
+        }
+      ]
+    },
+    "full-bank": {
+      "mean_score_pct": 15.151515151515152,
+      "stdev_pct": 10.497277621629559,
+      "mean_injects": 0,
+      "mean_ctx_tokens": 15793.333333333334,
+      "total_mem_calls": 42,
+      "records": [
+        {
+          "arm": "full-bank",
+          "score": 0.2727,
+          "steps": 80,
+          "reward": 5.8,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 16592,
+          "unlocked": [
+            "collect_sapling",
+            "collect_wood",
+            "eat_cow",
+            "make_wood_pickaxe",
+            "place_plant",
+            "place_table"
+          ]
+        },
+        {
+          "arm": "full-bank",
+          "score": 0.0909,
+          "steps": 80,
+          "reward": 2.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 15048,
+          "unlocked": [
+            "collect_wood",
+            "place_table"
+          ]
+        },
+        {
+          "arm": "full-bank",
+          "score": 0.0909,
+          "steps": 80,
+          "reward": 2.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 15740,
+          "unlocked": [
+            "collect_wood",
+            "eat_cow"
+          ]
+        }
+      ]
+    },
+    "active": {
+      "mean_score_pct": 12.121212121212121,
+      "stdev_pct": 5.2486388108147795,
+      "mean_injects": 11.666666666666666,
+      "mean_ctx_tokens": 233,
+      "total_mem_calls": 84,
+      "records": [
+        {
+          "arm": "active",
+          "score": 0.0909,
+          "steps": 80,
+          "reward": 2.0,
+          "injects": 12,
+          "inject_rate": 0.15,
+          "ctx_tokens": 238,
+          "unlocked": [
+            "collect_wood",
+            "place_table"
+          ]
+        },
+        {
+          "arm": "active",
+          "score": 0.1818,
+          "steps": 80,
+          "reward": 4.0,
+          "injects": 12,
+          "inject_rate": 0.15,
+          "ctx_tokens": 240,
+          "unlocked": [
+            "collect_stone",
+            "collect_wood",
+            "make_wood_pickaxe",
+            "place_table"
+          ]
+        },
+        {
+          "arm": "active",
+          "score": 0.0909,
+          "steps": 80,
+          "reward": 2.0,
+          "injects": 11,
+          "inject_rate": 0.1375,
+          "ctx_tokens": 221,
+          "unlocked": [
+            "collect_wood",
+            "eat_cow"
+          ]
+        }
+      ]
+    }
+  },
+  "active_minus_fullbank_pct": -3.030303030303031,
+  "active_minus_nomem_pct": 7.575757575757575
+}

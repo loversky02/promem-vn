@@ -1,0 +1,136 @@
+{
+  "act_model": "cc/claude-haiku-4-5-20251001",
+  "mem_model": "cc/claude-opus-4-8",
+  "episodes": 3,
+  "steps": 60,
+  "interval": 6,
+  "arms": {
+    "no-mem": {
+      "mean_score_pct": 0.0,
+      "stdev_pct": 0.0,
+      "mean_injects": 0,
+      "mean_ctx_tokens": 0,
+      "total_mem_calls": 0,
+      "records": [
+        {
+          "arm": "no-mem",
+          "score": 0.0,
+          "steps": 60,
+          "reward": 0.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 0,
+          "unlocked": []
+        },
+        {
+          "arm": "no-mem",
+          "score": 0.0,
+          "steps": 60,
+          "reward": 0.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 0,
+          "unlocked": []
+        },
+        {
+          "arm": "no-mem",
+          "score": 0.0,
+          "steps": 60,
+          "reward": 0.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 0,
+          "unlocked": []
+        }
+      ]
+    },
+    "full-bank": {
+      "mean_score_pct": 3.0303030303030303,
+      "stdev_pct": 2.6243194054073897,
+      "mean_injects": 0,
+      "mean_ctx_tokens": 8588.666666666666,
+      "total_mem_calls": 30,
+      "records": [
+        {
+          "arm": "full-bank",
+          "score": 0.0455,
+          "steps": 56,
+          "reward": 0.1,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 6476,
+          "unlocked": [
+            "collect_wood"
+          ]
+        },
+        {
+          "arm": "full-bank",
+          "score": 0.0,
+          "steps": 60,
+          "reward": 0.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 12096,
+          "unlocked": []
+        },
+        {
+          "arm": "full-bank",
+          "score": 0.0455,
+          "steps": 60,
+          "reward": 1.0,
+          "injects": 0,
+          "inject_rate": 0.0,
+          "ctx_tokens": 7194,
+          "unlocked": [
+            "collect_wood"
+          ]
+        }
+      ]
+    },
+    "active": {
+      "mean_score_pct": 3.0303030303030303,
+      "stdev_pct": 2.6243194054073897,
+      "mean_injects": 7.666666666666667,
+      "mean_ctx_tokens": 146.66666666666666,
+      "total_mem_calls": 60,
+      "records": [
+        {
+          "arm": "active",
+          "score": 0.0,
+          "steps": 60,
+          "reward": 0.0,
+          "injects": 5,
+          "inject_rate": 0.0833,
+          "ctx_tokens": 69,
+          "unlocked": []
+        },
+        {
+          "arm": "active",
+          "score": 0.0455,
+          "steps": 60,
+          "reward": 1.0,
+          "injects": 9,
+          "inject_rate": 0.15,
+          "ctx_tokens": 190,
+          "unlocked": [
+            "collect_wood"
+          ]
+        },
+        {
+          "arm": "active",
+          "score": 0.0455,
+          "steps": 60,
+          "reward": 1.0,
+          "injects": 9,
+          "inject_rate": 0.15,
+          "ctx_tokens": 181,
+          "unlocked": [
+            "collect_wood"
+          ]
+        }
+      ]
+    }
+  },
+  "active_minus_fullbank_pct": 0.0,
+  "active_minus_nomem_pct": 3.0303030303030303
+}
